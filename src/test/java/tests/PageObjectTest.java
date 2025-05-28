@@ -3,29 +3,13 @@ package tests;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 import pages.components.ResultModalComponent;
+import static tests.TestData.*;
 
 public class PageObjectTest extends TestBase {
-
-    //Data
-    String firstName = "Petr",
-        lastName = "Petrov",
-        email = "petr@test.com",
-        gender = "Male",
-        number = "8800555353",
-        dayOfBirth = "26",
-        monthOfBirth = "January",
-        yearOfBirth = "1994",
-        subject = "English",
-        hobby = "Music",
-        picture = "img.png",
-        currentAddress = "Some street 1",
-        state = "Uttar Pradesh",
-        city = "Agra";
 
     //Вызов page-объектов
     RegistrationPage registrationPage = new RegistrationPage();
     ResultModalComponent resultModalComponent = new ResultModalComponent();
-
 
     //Все атрибуты, позитивный
     @Test
