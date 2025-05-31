@@ -5,21 +5,21 @@ import com.github.javafaker.Faker;
 
 public class TestData {
 
-    static Faker faker = new Faker();
+    Faker faker = new Faker();
 
-    public static String firstName = faker.name().firstName();
-    public static String lastName = faker.name().lastName();
-    public static String email = faker.internet().emailAddress();
-    public static String gender = getRandomGender();
-    public static String number = faker.number().digits(10);
-    public static String dayOfBirth = getRandomDateOfBirth();
-    public static String monthOfBirth = getRandomMonthOfBirth();
-    public static String yearOfBirth = getRandomYearOfBirth();
-    public static String currentAddress = faker.address().streetAddress();
-    public static String subject = getRandomSubject();
-    public static String hobby = getRandomHobby();
-    public static String picture = getRandomPicture();
-    public static String state = getRandomState();
-    public static String city = getRandomCityByState(state);
+    public String firstName = faker.name().firstName();
+    public String lastName = faker.name().lastName();
+    public String email = faker.internet().emailAddress();
+    public String gender = getRandomGender();
+    public String number = faker.number().digits(10);
+    public String dayOfBirth = getRandomDateOfBirth();
+    public String monthOfBirth = getRandomMonthOfBirth();
+    public String yearOfBirth = getRandomYearOfBirth();
+    public String currentAddress = faker.address().streetAddress();
+    public String subject = getRandomSubject();
+    public String hobby = getRandomHobby();
+    public String picture = getRandomPicture();
+    public String state = getRandomState();
+    public String city = getRandomCityByState(state);
 
 }

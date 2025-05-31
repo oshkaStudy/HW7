@@ -22,7 +22,11 @@ public class RandomUtils {
     }
 
     public static String getRandomDateOfBirth() {
-        return String.valueOf(getRandomInt(1, 28));
+        String newDate = String.valueOf(getRandomInt(1, 28));
+        if (newDate.length() == 1) {
+            newDate = 0 + newDate;
+        }
+        return newDate;
     }
 
     public static String getRandomMonthOfBirth() {

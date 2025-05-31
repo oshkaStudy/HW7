@@ -3,7 +3,6 @@ package tests;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 import pages.components.ResultModalComponent;
-import static tests.TestData.*;
 
 public class PageObjectTest extends TestBase {
 
@@ -15,34 +14,40 @@ public class PageObjectTest extends TestBase {
     @Test
     void fillFormTest() {
 
+        TestData testData = new TestData();
+
         registrationPage
                 .openPage()
-                .setFirstName(firstName)
-                .setLastName(lastName)
-                .setEmail(email)
-                .setGender(gender)
-                .setUserNumber(number)
-                .setDateOfBirth(dayOfBirth, monthOfBirth, yearOfBirth)
-                .setSubject(subject)
-                .setHobby(hobby)
-                .uploadPicture(picture)
-                .setCurrentAddress(currentAddress)
-                .setState(state)
-                .setCity(city)
+                .setFirstName(testData.firstName)
+                .setLastName(testData.lastName)
+                .setEmail(testData.email)
+                .setGender(testData.gender)
+                .setUserNumber(testData.number)
+                .setDateOfBirth(testData.dayOfBirth,
+                        testData.monthOfBirth,
+                        testData.yearOfBirth)
+                .setSubject(testData.subject)
+                .setHobby(testData.hobby)
+                .uploadPicture(testData.picture)
+                .setCurrentAddress(testData.currentAddress)
+                .setState(testData.state)
+                .setCity(testData.city)
                 .clickSubmit();
 
         resultModalComponent
                 .checkModalAppears()
-                .checkResult("Student Name", firstName + " " + lastName)
-                .checkResult("Student Email", email)
-                .checkResult("Gender", gender)
-                .checkResult("Mobile", number)
-                .checkResult("Date of Birth", dayOfBirth + " " + monthOfBirth + "," + yearOfBirth)
-                .checkResult("Subjects", subject)
-                .checkResult("Hobbies", hobby)
-                .checkResult("Picture", picture)
-                .checkResult("Address", currentAddress)
-                .checkResult("State and City", state + " " + city);
+                .checkResult("Student Name", testData.firstName + " " + testData.lastName)
+                .checkResult("Student Email", testData.email)
+                .checkResult("Gender", testData.gender)
+                .checkResult("Mobile", testData.number)
+                .checkResult("Date of Birth", testData.dayOfBirth +
+                        " " + testData.monthOfBirth +
+                        "," + testData.yearOfBirth)
+                .checkResult("Subjects", testData.subject)
+                .checkResult("Hobbies", testData.hobby)
+                .checkResult("Picture", testData.picture)
+                .checkResult("Address", testData.currentAddress)
+                .checkResult("State and City", testData.state + " " + testData.city);
 
     }
 
@@ -50,21 +55,23 @@ public class PageObjectTest extends TestBase {
     @Test
     void fillFormMinimalAttributesTest() {
 
+        TestData testData = new TestData();
+
         registrationPage
                 .openPage()
-                .setFirstName(firstName)
-                .setLastName(lastName)
-                .setEmail(email)
-                .setGender(gender)
-                .setUserNumber(number)
+                .setFirstName(testData.firstName)
+                .setLastName(testData.lastName)
+                .setEmail(testData.email)
+                .setGender(testData.gender)
+                .setUserNumber(testData.number)
                 .clickSubmit();
 
         resultModalComponent
                 .checkModalAppears()
-                .checkResult("Student Name", firstName + " " + lastName)
-                .checkResult("Student Email", email)
-                .checkResult("Gender", gender)
-                .checkResult("Mobile", number);
+                .checkResult("Student Name", testData.firstName + " " + testData.lastName)
+                .checkResult("Student Email", testData.email)
+                .checkResult("Gender", testData.gender)
+                .checkResult("Mobile", testData.number);
 
     }
 
@@ -72,16 +79,20 @@ public class PageObjectTest extends TestBase {
     @Test
     void fillFormNegativeTest() {
 
+        TestData testData = new TestData();
+
         registrationPage
                 .openPage()
-                .setUserNumber(number)
-                .setDateOfBirth(dayOfBirth, monthOfBirth, yearOfBirth)
-                .setSubject(subject)
-                .setHobby(hobby)
-                .uploadPicture(picture)
-                .setCurrentAddress(currentAddress)
-                .setState(state)
-                .setCity(city)
+                .setUserNumber(testData.number)
+                .setDateOfBirth(testData.dayOfBirth,
+                        testData.monthOfBirth,
+                        testData.yearOfBirth)
+                .setSubject(testData.subject)
+                .setHobby(testData.hobby)
+                .uploadPicture(testData.picture)
+                .setCurrentAddress(testData.currentAddress)
+                .setState(testData.state)
+                .setCity(testData.city)
                 .clickSubmit();
 
         resultModalComponent
