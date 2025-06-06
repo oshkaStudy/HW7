@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import pages.components.CalendarComponent;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -27,10 +28,10 @@ public class RegistrationPage {
             city = $("#city"),
             cityOption = $("#stateCity-wrapper"),
             submitButton = $("#submit");;
-    private final SelenideElement customEl = $("id^=google_ads_iframe");
 
     CalendarComponent calendarComponent = new CalendarComponent();
 
+    @Step
     public RegistrationPage openPage() {
         open("/automation-practice-form");
         formTitle.shouldHave(text("Student Registration Form"));
@@ -39,58 +40,71 @@ public class RegistrationPage {
         executeJavaScript("$('[id^=\"google_ads_iframe\"]').remove();");
         return this;
     }
+    @Step
     public RegistrationPage setFirstName(String value) {
         firstNameInput.setValue(value);
         return this;
     }
+    @Step
     public RegistrationPage setLastName(String value) {
         lastNameInput.setValue(value);
         return this;
     }
+    @Step
     public RegistrationPage setEmail(String value) {
         userEmailInput.setValue(value);
         return this;
     }
+    @Step
     public RegistrationPage setGender(String value) {
         genderWrapper.$(byText(value)).click();
         return this;
     }
+    @Step
     public RegistrationPage setUserNumber(String value) {
         userNumberInput.setValue(value);
         return this;
     }
+    @Step
     public RegistrationPage setDateOfBirth(String day, String month, String year) {
         calendarInput.click();
         calendarComponent.setDate(day, month, year);
         return this;
     }
+    @Step
     public RegistrationPage setSubject(String value) {
         subjectsInput.setValue(value);
         subjectOption.click();
         return this;
     }
+    @Step
     public RegistrationPage setHobby(String value) {
         hobbiesWrapper.$(byText(value)).click();
         return this;
     }
+    @Step
     public RegistrationPage uploadPicture(String value) {
         pictureInput.uploadFromClasspath(value);
         return this;
     }
+    @Step
     public RegistrationPage setCurrentAddress(String value) {
         currentAddress.setValue(value);
         return this;
     }
+    @Step
     public RegistrationPage setState(String value) {
         state.click();
         stateOption.$(byText(value)).click();
         return this;
     }
+    @Step
     public RegistrationPage setCity(String value) {
         city.click();
         cityOption.$(byText(value)).click();
         return this;
     }
+    @Step
     public RegistrationPage clickSubmit() {
         submitButton.click();
         return this;
