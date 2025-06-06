@@ -36,7 +36,7 @@ public class RegistrationPage {
         formTitle.shouldHave(text("Student Registration Form"));
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
-        executeJavaScript("$(\"id^=google_ads_iframe\").remove()");
+        executeJavaScript("$('[id^=\"google_ads_iframe\"]').remove();");
         return this;
     }
     public RegistrationPage setFirstName(String value) {
