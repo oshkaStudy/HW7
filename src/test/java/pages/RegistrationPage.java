@@ -86,6 +86,7 @@ public class RegistrationPage {
         return this;
     }
     public RegistrationPage setCurrentAddress(String value) {
+        tryToRemoveBanners();
         currentAddress.setValue(value);
         return this;
     }

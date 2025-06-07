@@ -17,14 +17,14 @@ public class TestBase {
     @BeforeAll
     static void setupConfig() {
 
-        Configuration.baseUrl = System.getProperty("environment","");
+        Configuration.baseUrl = System.getProperty("environment");
         Configuration.browser = System.getProperty("browserType", "chrome");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         Configuration.browserVersion = System.getProperty("browserVersion", "128.0");
         Configuration.pageLoadStrategy = "eager";
         Configuration.remote = String.format("https://%s@%s/wd/hub",
-                System.getProperty("selenoidCredentials", ""),
-                System.getProperty("selenoidUrl", ""));
+                System.getProperty("selenoidCredentials"),
+                System.getProperty("selenoidUrl"));
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
