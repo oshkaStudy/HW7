@@ -31,12 +31,16 @@ public class RegistrationPage {
 
     CalendarComponent calendarComponent = new CalendarComponent();
 
-    public RegistrationPage openPage() {
-        open("/automation-practice-form");
-        formTitle.shouldHave(text("Student Registration Form"));
+    public void tryToRemoveBanners() {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('[id^=\"google_ads_iframe\"]').remove();");
+    }
+
+    public RegistrationPage openPage() {
+        open("/automation-practice-form");
+        formTitle.shouldHave(text("Student Registration Form"));
+        tryToRemoveBanners();
         return this;
     }
     public RegistrationPage setFirstName(String value) {
@@ -92,6 +96,7 @@ public class RegistrationPage {
         return this;
     }
     public RegistrationPage clickSubmit() {
+        tryToRemoveBanners();
         submitButton.click();
         return this;
     }
