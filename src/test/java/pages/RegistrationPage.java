@@ -34,7 +34,7 @@ public class RegistrationPage {
     public void tryToRemoveBanners() {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
-        executeJavaScript("$('[id^=\"google_ads_iframe\"]').remove();");
+        executeJavaScript("$('iframe[id^=\"google_ads_iframe\"]').remove();");
     }
 
     public RegistrationPage openPage() {
