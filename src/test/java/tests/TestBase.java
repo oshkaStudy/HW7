@@ -18,13 +18,6 @@ public class TestBase {
     static void setupConfig() {
 
         Configuration.baseUrl = System.getProperty("environment","demoqa.com");
-
-        /*
-        System.out.println("System property environmentURL: " + System.getProperty("environmentURL"));
-        System.out.println("Final baseUrl: " + baseUrl);
-
-
-         */
         Configuration.browserSize = "1920x1080";
         Configuration.pageLoadStrategy = "eager";
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
