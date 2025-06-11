@@ -33,6 +33,11 @@ public class TestBase {
         ));
         Configuration.browserCapabilities = capabilities;
 
+    }
+
+    @BeforeEach
+    void listenerConfig() {
+
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
     }
