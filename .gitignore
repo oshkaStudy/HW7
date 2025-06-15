@@ -70,3 +70,7 @@ out/
 !**/src/test/**/out/
 
 # End of https://www.toptal.com/developers/gitignore/api/java,gradle
+
+# Custom
+notifications/config.json
+gradle.properties
